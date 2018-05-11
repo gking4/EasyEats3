@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-navbar>
+	  <ion-title>Easy Eats
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-searchbar>
+	  [(ngModel)]="myInput"
+	  [showCancelButton]="shouldShowCancel"
+	  (ionInput)="onInput($event)"
+	  (ionCancel)="onCancel($event)">
+	</ion-searchbar>
+	<div class="centering">
+	<p></p>
+	<button class="button" ion-button round color = mad padding (click)="setLocation">Find Location</button>
+	<p>
+		<button class="button" ion-button (click)="go()" round color = secondary padding>Start</button>
+	</p>
+	</div>
+	
+

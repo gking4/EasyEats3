@@ -9,7 +9,7 @@ import { RestaurantPickerPage } from '../restaurant-picker/restaurant-picker';
  * Ionic pages and navigation.
  */
 var foodChoices:string[] = ["Hamburger", "Mexican", "Pizza", "Italian",
-                             "Chinese", "Japanese"  ]
+                             "Chinese", "Japanese", "Shit"  ]
 var randChoice; 
 
 @IonicPage()

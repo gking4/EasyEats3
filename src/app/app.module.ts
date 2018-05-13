@@ -8,6 +8,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Page2Page } from '../pages/page2/page2';
 import { RestaurantPickerPage } from '../pages/restaurant-picker/restaurant-picker';
+import { HttpModule} from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Geolocation } from '@ionic-native/geolocation';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,9 @@ import { RestaurantPickerPage } from '../pages/restaurant-picker/restaurant-pick
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,6 +36,10 @@ import { RestaurantPickerPage } from '../pages/restaurant-picker/restaurant-pick
   providers: [
     StatusBar,
     SplashScreen,
+    HttpModule,
+    HttpClientModule,
+    Geolocation,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

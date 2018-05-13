@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RestaurantPickerPage } from '../restaurant-picker/restaurant-picker';
 
 /**
  * Generated class for the Page2Page page.
@@ -28,5 +29,8 @@ export class Page2Page {
   leverPull(){
     randChoice = foodChoices[Math.floor(Math.random() * foodChoices.length)];
     document.getElementById("foodResults").innerHTML = randChoice;
-  }
+  };
+  go(){
+    this.navCtrl.push(RestaurantPickerPage);
+  };
 }

@@ -7,6 +7,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+var foodChoices:string[] = ["Hamburger", "Mexican", "Pizza", "Italian",
+                             "Chinese", "Japanese"  ]
+var randChoice; 
 
 @IonicPage()
 @Component({
@@ -22,4 +25,8 @@ export class Page2Page {
     console.log('ionViewDidLoad Page2Page');
   }
 
+  leverPull(){
+    randChoice = foodChoices[Math.floor(Math.random() * foodChoices.length)];
+    document.getElementById("foodResults").innerHTML = randChoice;
+  }
 }

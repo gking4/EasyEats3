@@ -26,27 +26,32 @@ this.nativeStorage.getItem('myitem')
     data => console.log(data),
     error => console.error(error)
   );*/
+  //code from the internet, should just be getting current coords
   getLocation(){
-    return this._geoLoc.getCurrentPosition();
+    return this.geolocation.getCurrentPosition();
   }
+  //uses geolocation to find devices coords, then uses native storage to save those numbers
   storeLocation(){
-    /*this.platform.ready().then(() => {
-
-      Geolocation.getCurrentPosition().then(pos => {
-        console.log('lat: ' + pos.coords.latitude + ', lon: ' + pos.coords.longitude);
-      });
-   })*/
+   var lat;
+  var long;
    this.getLocation().then( res => {
      console.log(res.coords.latitude)
+     lat = res.coords.latitude;
+     console.log(lat)
      console.log(res.coords.longitude)
+     long = res.coords.longitude
+     console.log(long)
+     this.nativeStorage.setItem('lat', {property:lat}).then( () => console.log('Stored item', error => console.error('Error storing item', error)));
+     this.nativeStorage.setItem('long', {property:long}).then( () => console.log('Stored item', error => console.error('Error storing item', error)));
    }).catch( err => {
      console.log(err);
    })
    }
+   //pushes page 2 onto the stack
+   go(){
+    this.navCtrl.push(Page2Page);
+  }
   }
 
 
-  go(){
-    this.navCtrl.push(Page2Page);
-  };
-}
+

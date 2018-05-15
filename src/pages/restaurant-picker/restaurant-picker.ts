@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 /**
  * Generated class for the RestaurantPickerPage page.
@@ -8,6 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+
 @IonicPage()
 @Component({
   selector: 'page-restaurant-picker',
@@ -15,11 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RestaurantPickerPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
+    platform.ready().then(
+      (readySource) => {
+           if(readySource=='cordova'){
+              // start handling network stuff now
+           }
+          });
   }
-
+ 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantPickerPage');
   }
+  leverPullMaps(){
 
+  }
 }

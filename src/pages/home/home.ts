@@ -13,6 +13,12 @@ export class HomePage {
    @ViewChild('myNav') nav: NavController
    public rootPage: any = HomePage;
 constructor(public navCtrl: NavController, private platform: Platform, private geolocation: Geolocation, private nativeStorage: NativeStorage) {
+  platform.ready().then(
+    (readySource) => {
+         if(readySource=='cordova'){
+            // start handling network stuff now
+         }
+        });
 }
 
 /*this.nativeStorage.setItem('myitem', {property: 'value', anotherProperty: 'anotherValue'})
@@ -27,6 +33,7 @@ this.nativeStorage.getItem('myitem')
     error => console.error(error)
   );*/
   //code from the internet, should just be getting current coords
+
   getLocation(){
     return this.geolocation.getCurrentPosition();
   }
@@ -47,7 +54,7 @@ this.nativeStorage.getItem('myitem')
      console.log(err);
    })
    }
-   //pushes page 2 onto the stack
+   //pushes page 2 onto the
    go(){
     this.navCtrl.push(Page2Page);
   }

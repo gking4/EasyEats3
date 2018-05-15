@@ -10,7 +10,9 @@ import { RestaurantPickerPage } from '../restaurant-picker/restaurant-picker';
  */
 //list of all food choices, all enabled by default, this will not change after filtering
 var foodChoices:string[] = ["Hamburger", "Mexican", "Pizza", "Italian",
-                             "Chinese", "Japanese", "Shit"  ]
+                             "Chinese", "Japanese", "American", "Barbecue",
+                            "French", "Indian", "Italian", "Seafood",
+                            "Steak", "Sushi", "Thai"  ]
 var randChoice; 
 
 @IonicPage()
@@ -21,6 +23,7 @@ var randChoice;
 export class Page2Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {

@@ -8,6 +8,7 @@ import { RestaurantPickerPage } from '../restaurant-picker/restaurant-picker';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+//list of all food choices, all enabled by default, this will not change after filtering
 var foodChoices:string[] = ["Hamburger", "Mexican", "Pizza", "Italian",
                              "Chinese", "Japanese", "Shit"  ]
 var randChoice; 
@@ -25,11 +26,12 @@ export class Page2Page {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Page2Page');
   }
-
+  //selects a random choice from the food choice arry and then updates the button with the info
   leverPull(){
     randChoice = foodChoices[Math.floor(Math.random() * foodChoices.length)];
     document.getElementById("foodResults").innerHTML = randChoice;
   };
+  //pushes page 3 onto the stack
   go(){
     this.navCtrl.push(RestaurantPickerPage);
   };

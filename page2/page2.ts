@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestaurantPickerPage } from '../restaurant-picker/restaurant-picker';
+import { Page3Page } from '../page3/page3';
 
 /**
  * Generated class for the Page2Page page.
@@ -9,7 +10,7 @@ import { RestaurantPickerPage } from '../restaurant-picker/restaurant-picker';
  * Ionic pages and navigation.
  */
 var foodChoices:string[] = ["Hamburger", "Mexican", "Pizza", "Italian",
-                             "Chinese", "Japanese", "Shit"  ]
+                             "Chinese", "Japanese" ]
 var randChoice; 
 
 @IonicPage()
@@ -32,5 +33,8 @@ export class Page2Page {
   };
   go(){
     this.navCtrl.push(RestaurantPickerPage);
+  };
+  next(){
+    this.navCtrl.push(Page3Page);
   };
 }

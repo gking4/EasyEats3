@@ -5,7 +5,7 @@
 	</ion-navbar>
 </ion-header>
 <ion-content padding>
-	<ion-searchbar id="location">
+	<ion-searchbar>
 	  [(ngModel)]="myInput"
 	  [showCancelButton]="shouldShowCancel"
 	  (ionInput)="onInput($event)"
@@ -13,9 +13,9 @@
 	</ion-searchbar>
 	<div class="centering">
 	<p></p>
-	<button class="button" ion-button round color = mad padding (click)="storeLocation()">Find Location</button>
+	<button class="button" ion-button round color=car padding (click)="setLocation">Find Location</button>
 	<p>
-		<button class="button" ion-button (click)="go()" round color = secondary padding>Start</button>
+		<button class="button" ion-button (click)="go()" round color = button padding>Start</button>
 	</p>
 	</div>
 	

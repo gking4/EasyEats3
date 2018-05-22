@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the RestaurantPickerPage page.
+ * Generated class for the Page3Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-restaurant-picker',
-  templateUrl: 'restaurant-picker.html',
+  selector: 'page-page3',
+  templateUrl: 'page3.html',
 })
-export class RestaurantPickerPage {
+export class Page3Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RestaurantPickerPage');
+    console.log('ionViewDidLoad Page3Page');
   }
 
 }
